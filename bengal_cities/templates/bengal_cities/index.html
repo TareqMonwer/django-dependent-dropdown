@@ -1,7 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1 class="ui huge header">
-    {{ hi }}
-</h1>
+    <form action="" class="mt-5" id="bengal-cities">
+        {% csrf_token %}
+        <div class="ui selection dropdown" id="division">
+          <input type="hidden" name="division">
+          <i class="dropdown icon"></i>
+          <div class="default text">Select a division</div>
+          <div class="menu" id="division-databox"></div>
+        </div>
+
+        <div class="ui selection dropdown" id="district">
+          <input type="hidden" name="district">
+          <i class="dropdown icon"></i>
+          <div class="default text" id="district-default-text">Select a district</div>
+          <div class="menu" id="district-databox"></div>
+        </div>
+
+        <div class="ui selection dropdown" id="thana">
+          <input type="hidden" name="thana">
+          <i class="dropdown icon"></i>
+          <div class="default text" id="thana-default-text">Select a thana</div>
+          <div class="menu" id="thana-databox"></div>
+        </div>
+    </form>
 {% endblock %}
